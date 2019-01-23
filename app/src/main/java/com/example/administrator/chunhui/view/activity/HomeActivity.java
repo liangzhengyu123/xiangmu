@@ -18,6 +18,8 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.example.administrator.chunhui.R;
+import com.example.administrator.chunhui.adapter.HomeAdapter;
+import com.example.administrator.chunhui.bean.HomeData;
 import com.example.administrator.chunhui.view.fragment.HomeFragment;
 import com.example.administrator.chunhui.view.fragment.Knowledge_systemFragment;
 import com.example.administrator.chunhui.view.fragment.NavigationFragment;
@@ -30,7 +32,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class HomeActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, HomeAdapter.AAA {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -192,5 +194,13 @@ public class HomeActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onclick(HomeData.DataBean.DatasBean bean) {
+        Intent intent = new Intent(HomeActivity.this,HomeDetailActivity.class);
+        intent.putExtra("bbb",bean.getTitle());
+        intent.putExtra("ccc",bean.getLink());
+        startActivity(intent);
     }
 }

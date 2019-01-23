@@ -53,6 +53,9 @@ dependencies {
     //卡片布局
     implementation 'com.android.support:cardview-v7:28.0.0'
 
+    //banner轮播图
+    implementation 'com.youth.banner:banner:1.4.10'
+
     //tab
     implementation 'com.android.support:design:28.0.0-rc01'
     //SmartRefreshLayout

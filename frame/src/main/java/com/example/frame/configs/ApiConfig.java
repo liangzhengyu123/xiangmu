@@ -12,4 +12,8 @@ public class ApiConfig {
     public static final int GET_PROJECT_TAB = 3;
     public static final int GET_PROJECT_CONTENT = 4;
     public static final int GET_PROJECT_LOADING = 5;
+
+    //主页面
+    public static final int GET_HOME_DATA = 6;
+    public static final int GET_BANNER_LUN = 7;
 }

@@ -1,5 +1,7 @@
 package com.example.administrator.chunhui.module;
 
+import com.example.administrator.chunhui.bean.BannerData;
+import com.example.administrator.chunhui.bean.HomeData;
 import com.example.administrator.chunhui.bean.News;
 import com.example.administrator.chunhui.entity.System_entity;
 import com.example.administrator.chunhui.utils.OkhttpUtils;
@@ -8,7 +10,9 @@ import com.example.frame.interfaces.ICommonView;
 
 import okhttp3.RequestBody;
 
+import static com.example.frame.configs.ApiConfig.GET_BANNER_LUN;
 import static com.example.frame.configs.ApiConfig.GET_ERYE_DATA;
+import static com.example.frame.configs.ApiConfig.GET_HOME_DATA;
 import static com.example.frame.configs.ApiConfig.GET_NEWS_DATA;
 import static com.example.frame.configs.ApiConfig.GET_SYSTEM_DATA;
 
@@ -37,6 +41,14 @@ public class Ns implements ICommonModule {
             case GET_ERYE_DATA:
 
                 break;
+                //首页
+            case GET_HOME_DATA:
+                OkhttpUtils.getInstance().httpData(view,apiconfig,HomeData.class,null,null,"article/list/0/json");
+                break;
+            case GET_BANNER_LUN:
+                OkhttpUtils.getInstance().httpData(view,apiconfig,BannerData.class,null,null,"banner/json");
+                break;
+
         }
     }
 }
