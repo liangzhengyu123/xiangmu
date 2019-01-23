@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "com.example.administrator.chunhui"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation "com.squareup.retrofit2:retrofit:$retrofit2"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit2"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit2"
+    //implementation "io.reactivex.rxjava2:rxjava:$rxjava2"
+    //implementation "io.reactivex.rxjava2:rxandroid:$rxjava2"
+    implementation "com.jakewharton:butterknife:$butterknife"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknife"
+    implementation "com.flyco.tablayout:FlycoTabLayout_Lib:$tablayout"
+    implementation "com.github.bumptech.glide:glide:$glide"
+    implementation "com.android.support:recyclerview-v7:$recyclerview"
+    //WebView加载图片适应屏幕
+    implementation "org.jsoup:jsoup:$webview"
+
+    //api "com.squareup.okhttp3:okhttp:$okhttp3"
+    //api "com.squareup.okhttp3:logging-interceptor:$ok3log"
+
+    implementation project(':frame')
+    //RecyclerView:
+    implementation project(':xrecyclerView')
+
+    //卡片布局
+    implementation 'com.android.support:cardview-v7:28.0.0'
+
+    //tab
+    implementation 'com.android.support:design:28.0.0-rc01'
+    //SmartRefreshLayout
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4-7'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.4-7'
+}

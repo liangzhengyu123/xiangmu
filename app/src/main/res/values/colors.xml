@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="splash_blue">#279EDE</color>
+    <color name="splash_blue99">#99279EDE</color>
+    <color name="white">#FFFFFF</color>
+    <color name="hong">#F70202</color>
+    <color name="hei">#0C0B0B</color>
+    <color name="lan">#0BF7F4</color>
+</resources>
